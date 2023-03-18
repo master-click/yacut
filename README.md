@@ -4,8 +4,8 @@
 
 ## Технологии
 
-1. Python
-2. Flask
+1. Python 3.7.9
+2. Flask 2.0.2
 3. REST API
 
 ## Запуск проекта
