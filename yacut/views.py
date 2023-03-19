@@ -26,8 +26,9 @@ def add_link_view():
             short=custom_id
         )
         try:
-            db.session.add(urlmap)
-            db.session.commit()
+            with db.session.no_autoflush:
+                db.session.add(urlmap)
+                db.session.commit()
         except Exception as e:
             db.session.rollback()
             raise InvalidAPIUsage(f'Ошибка при сохранении данных: {str(e)}')
